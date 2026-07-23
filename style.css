@@ -19,7 +19,7 @@ body {
     line-height: 1.6;
 }
 
-h1, h2, h3, .logo {
+h1, h2, h3 {
     font-family: 'Cinzel', serif;
     font-weight: 600;
     margin: 0;
@@ -42,7 +42,7 @@ a {
     margin-bottom: 40px;
 }
 
-/* Nawigacja */
+/* Nawigacja z okrągłym logo */
 nav {
     position: fixed;
     top: 0;
@@ -51,12 +51,28 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 20px 0;
+    padding: 15px 0;
     z-index: 1000;
     border-bottom: 1px solid #222;
 }
 
-.logo {
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-logo {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%; /* To ścina kwadratowe logo.jpg do idealnego kółka */
+    object-fit: cover;
+    border: 2px solid var(--accent-color);
+}
+
+.logo-text {
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
     font-size: 24px;
     color: var(--accent-color);
 }
@@ -87,8 +103,7 @@ nav {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: #222; /* Tu w CSS podepniemy później zdjęcie tła */
-    /* background-image: url('link-do-zdjecia.jpg'); */
+    background-color: #222;
     background-size: cover;
     background-position: center;
     position: relative;
@@ -231,7 +246,7 @@ footer {
 /* Responsywność dla telefonów */
 @media (max-width: 768px) {
     .nav-links {
-        display: none; /* Proste ukrycie menu na małych ekranach dla czystości projektu startowego */
+        display: none;
     }
     .hero h1 {
         font-size: 3rem;
